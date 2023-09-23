@@ -1,0 +1,76 @@
+// Utility
+@use "mixins";
+@use "variables";
+
+.phases
+{
+    @include mixins.flex(row, center, stretch, wrap);
+
+    gap: variables.$default-gap;
+
+    .phase
+    {
+        @include mixins.flex(column, flex-start);
+        @include mixins.container(2);
+
+        flex: 1 0 auto;
+        gap: variables.$default-gap;
+        padding: variables.$default-padding;
+
+        &--break
+        {
+            --text-color: var(--text-color-phase-break);
+            --border-color: var( --border-color-phase-break);
+        }
+        &--session
+        {
+            --text-color: var(--text-color-phase-session);
+            --border-color: var( --border-color-phase-session);
+        }
+
+        &__header
+        {
+            @include mixins.flex(row, center, stretch);
+            @include mixins.container(3);
+
+            text-align: center;
+            flex: 1 0 auto;
+            text-transform: capitalize;
+
+            &.header
+            {
+                h2
+                {
+                    @include mixins.flex(row, center, center);
+                    max-width: 7ch;
+                }
+            }
+        }
+
+        &__time
+        {
+            @include mixins.container(3);
+            @include mixins.flex(row, center, stretch);
+            @include mixins.border(var(--border-color));
+
+            color: var(--text-color);
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        &__control
+        {
+            @include mixins.flex(column, center, stretch);
+
+            gap: variables.$default-gap;
+        }
+    }
+
+    .setter-group
+    {
+        @include mixins.flex(row, center, center, wrap);
+
+        gap: variables.$default-gap;
+    }
+    
+}

@@ -1,0 +1,48 @@
+// Utility
+@use "mixins";
+@use "variables";
+
+
+.display
+{
+    &--break
+    {
+        --dark: var(--progress-break-color-dark);
+        --medium: var(--progress-break-color-medium);
+        --light: var(--progress-break-color-light);
+    }
+    &--session
+    {
+        --dark: var(--progress-session-color-dark);
+        --medium: var(--progress-session-color-medium);
+        --light: var(--progress-session-color-light);
+    }
+}
+
+.progress-bar
+{
+    border: 2px solid var(--dark);
+    border-radius: 4px;
+    padding: 4px;
+    background-color: black;
+    
+    &__indicator
+    {
+        background-size: variables.$progress-bar-size variables.$progress-bar-size;
+        height: variables.$progress-bar-size;
+        border-radius: 2px;
+        background-image: 
+            linear-gradient(45deg,
+                var(--dark) 25%, var(--light) 25%, 
+                var(--light) 50%, var(--dark) 50%,
+                var(--dark) 75%, var(--light) 75%,
+                var(--light));
+        animation: stripes 1s linear infinite ;
+    }
+}
+
+@keyframes stripes 
+{
+    from  { background-position: variables.$progress-bar-size 0; }
+    to    { background-position: 0 0; }
+}

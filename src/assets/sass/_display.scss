@@ -1,0 +1,59 @@
+// Utility
+@use "mixins";
+@use "variables";
+
+
+.display
+{
+    @include mixins.flex(column);
+    @include mixins.container(2);
+    
+    padding: variables.$default-padding;
+    gap: variables.$default-gap;
+
+    &--break
+    {
+        --text-color: var(--text-color-display-break);
+        --border-color: var( --border-color-display-break);
+    }
+    &--session
+    {
+        --text-color: var(--text-color-display-session);
+        --border-color: var( --border-color-display-session);
+    }
+
+    &__phase
+    {
+        @include mixins.flex(column);
+        @include mixins.container(1);
+        @include mixins.border(var(--border-color));
+        
+        padding: variables.$default-padding;
+        color: var(--text-color);
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    &__time
+    {
+        @include mixins.container(1);
+        @include mixins.flex(column);
+        @include mixins.border(var(--border-color));
+        
+        padding: variables.$default-padding;
+        color: var(--text-color);
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    &__control
+    {
+        @include mixins.grid(1fr 1fr, 1fr 1fr);
+
+        gap: variables.$default-gap;
+    }
+}

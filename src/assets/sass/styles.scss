@@ -1,0 +1,162 @@
+// Utility
+@use "mixins";
+@use "variables";
+// Theme
+@use "theme";
+// Components
+@use "buttons";
+@use "modal";
+@use "phases";
+@use "display";
+@use "progress";
+
+*, *::before, *::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Titillium Web";
+}
+
+body, #root
+{
+    min-height: 100vh;
+}
+
+#root
+{   @include mixins.container(0, 0);
+
+    padding: variables.$default-padding;
+    color: var(--text-color);
+}
+
+.application
+{
+    @include mixins.flex(column, center, stretch);
+
+    max-width: 320px;
+    margin: 0 auto;
+    
+    &__content
+    {
+        @include mixins.flex(column);
+
+        gap: variables.$default-gap;
+    }
+
+    &__header
+    {
+        @include mixins.flex(row, center, flex-start, wrap);
+        @include mixins.container(2);
+
+        gap: variables.$default-gap;
+        padding: variables.$default-padding;
+   
+        .header
+        {
+            &__control
+            {
+                @include mixins.grid(1fr 1fr, auto);
+
+                flex: 1 0 auto;
+                gap: variables.$default-gap;
+
+                .button--modal-open
+                {
+                    align-self: flex-start;
+                }
+
+                .button--switch
+                {
+                    align-self: flex-end;
+                }
+            }
+            &__title
+            {
+                @include mixins.flex(row, center, center);
+                @include mixins.container(3);
+               
+                flex: 1000 0 120px;
+                align-self: stretch;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+
+
+}
+
+@media screen and (min-width: 992px) 
+{
+
+    #root
+    {
+        @include mixins.flex(column, center, stretch);
+    }
+    .application
+    {
+
+        width: 80%;
+        max-width: variables.$width-large-screen;
+
+        .header__control
+        {
+            flex: 1 0 auto;
+            justify-content: stretch;
+        }
+        .header__title
+        {
+            flex: 10 0 auto;
+        }
+    }
+    .application__header
+    {
+        grid-area: HEADER;
+    }
+    .application__content
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: 
+            "HEADER DISPLAY"
+            "PHASES DISPLAY";
+        align-items: flex-start;
+
+    }
+    .phases
+    {
+    
+        grid-area: PHASES;
+        align-self: stretch;
+    }
+    .display
+    {
+        grid-area: DISPLAY;
+
+
+        justify-content: stretch;
+        align-items: stretch;
+        .display__control
+        {
+            margin-top: auto;
+        }
+        &__time
+        {
+            flex: 1 0 auto;
+        }
+        &__phase
+        {
+            flex: 1 0 auto;
+        }
+    }
+
+    #break-label, #session-label
+    {
+        max-width: 77ch;
+    }
+
+}
+

@@ -1,0 +1,111 @@
+// Utility
+@use "variables";
+
+html
+{
+    &[data-theme=light]
+    {
+        // Text
+        --text-color: #{variables.$color-black};
+        --text-color-alt: #{variables.$color-white};
+        --text-color-phase-break: #{variables.$color-red-light};
+        --text-color-display-break: #{variables.$color-red-light};
+        --text-color-phase-session: #{variables.$color-violet-light};
+        --text-color-display-session: #{variables.$color-violet-light};
+
+        // Progress bar
+        --progress-break-color-dark: #{variables.$color-red-light};
+        --progress-break-color-medium: #{variables.$color-red-medium};
+        --progress-break-color-light: #{variables.$color-red-dark};
+        --progress-session-color-dark: #{variables.$color-violet-light};
+        --progress-session-color-medium: #{variables.$color-violet-medium};
+        --progress-session-color-light: #{variables.$color-violet-dark};
+
+        // Borders
+        --border-color-phase-break: #{variables.$color-red-medium};
+        --border-color-display-break: #{variables.$color-red-light};
+        --border-color-phase-session: #{variables.$color-violet-medium};
+        --border-color-display-session: #{variables.$color-violet-light};
+
+        // Buttons
+        --button-color-bg-text: #{variables.$color-white-light};
+        --button-color-bg-text-hovered: #{variables.$color-white-light};
+        --button-color-bg-text-pressed: #{variables.$color-green-light};
+
+        --button-color-bg-icon: #{variables.$color-black-dark};
+        --button-color-bg-icon-hovered: #{variables.$color-yellow-medium};
+        --button-color-bg-icon-pressed: #{variables.$color-green-medium};
+
+        --button-color-text: #{variables.$color-black};
+        --button-color-text-hovered: #{variables.$color-yellow-medium};
+        --button-color-text-pressed: #{variables.$color-white};
+
+        --button-color-icon: #{variables.$color-white};
+        --button-color-icon-hovered: #{variables.$color-white};
+        --button-color-icon-pressed: #{variables.$color-white};
+
+        --button-switch-color-bg: #{variables.$color-gray-dark};
+        --button-switch-color-bg-hovered: #{variables.$color-yellow-dark};
+        --button-switch-color-runner: #{variables.$color-black-light};
+        --button-switch-color-icon: #{variables.$color-yellow-medium};
+
+        // Backgrounds
+        --bg-elevation-0: #{variables.$color-gray-light};
+        --bg-elevation-1: #{variables.$color-black};
+        --bg-elevation-2: #{variables.$color-white-medium};
+        --bg-elevation-3: #{variables.$color-white};
+    }
+    &[data-theme=dark]
+    {
+        // Text
+        --text-color: #{variables.$color-white};
+        --text-color-alt: #{variables.$color-black};
+        --text-color-phase-break: #{variables.$color-blue-light};
+        --text-color-display-break: #{variables.$color-blue-light};
+        --text-color-phase-session: #{variables.$color-green-light};
+        --text-color-display-session: #{variables.$color-green-light};
+
+        // Progress bar
+        --progress-break-color-dark: #{variables.$color-blue-dark};
+        --progress-break-color-medium: #{variables.$color-blue-medium};
+        --progress-break-color-light: #{variables.$color-blue-light};
+        --progress-session-color-dark: #{variables.$color-green-dark};
+        --progress-session-color-medium: #{variables.$color-green-medium};
+        --progress-session-color-light: #{variables.$color-green-light};
+
+        // Borders
+        --border-color-phase-break: #{variables.$color-blue-dark};
+        --border-color-display-break: #{variables.$color-blue-dark};
+        --border-color-phase-session: #{variables.$color-green-dark};
+        --border-color-display-session: #{variables.$color-green-dark};
+
+        // Buttons
+        --button-color-bg-text: #{variables.$color-black-lightest};
+        --button-color-bg-text-hovered: #{variables.$color-black-lightest};
+        --button-color-bg-text-pressed: #{variables.$color-black-lightest};
+
+        --button-color-bg-icon: #{variables.$color-gray-dark};
+        --button-color-bg-icon-hovered: #{variables.$color-blue-dark};
+        --button-color-bg-icon-pressed: #{variables.$color-green-dark};
+
+        --button-color-text: #{variables.$color-white-light};
+        --button-color-text-hovered: #{variables.$color-blue-medium};
+        --button-color-text-pressed: #{variables.$color-green-medium};
+
+        --button-color-icon: #{variables.$color-white-light};
+        --button-color-icon-hovered: #{variables.$color-white-light};
+        --button-color-icon-pressed: #{variables.$color-green-light};
+
+        --button-switch-color-bg: #{variables.$color-gray-dark};
+        --button-switch-color-bg-hovered: #{variables.$color-blue-dark};
+        --button-switch-color-runner: #{variables.$color-black-light};
+        --button-switch-color-icon: #{variables.$color-blue-medium};
+
+        // Backgrounds
+        --bg-elevation-0: #{variables.$color-black-darkest};
+        --bg-elevation-1: #{variables.$color-black-dark};
+        --bg-elevation-2: #{variables.$color-black-medium};
+        --bg-elevation-3: #{variables.$color-black-light};
+        --bg-elevation-4: #{variables.$color-black-lightest};
+    }
+}   

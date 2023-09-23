@@ -1,0 +1,164 @@
+// Utility
+@use "mixins";
+@use "variables";
+
+.button
+{
+    @include mixins.flex(row);
+
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    overflow: hidden;
+
+    // Variables
+    $font-size: 1.25rem;
+    $padding-vertical: 0.25rem;
+    $padding-horizontal: 0.25rem;
+    $text-margin: 1rem;
+    $line-height: 1.2;
+
+    // Icon button (default)
+    &--icon
+    {   
+        .button
+        {
+            &__text
+            {
+                @include mixins.flex(row, center, center);
+
+                font-size: $font-size;
+                background-color: var(--button-color-bg-text);
+                color: var(--button-color-text);
+                flex: 1 0 auto;
+                line-height: $line-height;
+                padding: $padding-vertical $padding-horizontal;
+            }
+            
+            &__icon
+            {
+                @include mixins.flex(row, center, center);
+
+                font-size: $font-size;
+                background-color: var(--button-color-bg-icon);
+
+                padding: $padding-vertical $padding-horizontal;
+                width: calc(($line-height)*1em   + ($padding-vertical)*2);
+                height: calc(($line-height)*1em  + ($padding-vertical)*2);
+
+                .svg-icon
+                {
+                    width: 1em;
+                    height: 1em;
+                }
+            }
+        }
+
+        &:hover
+        {
+            .button
+            {
+                &__text
+                {
+                    background-color: var(--button-color-bg-text-hovered);
+                    color: var(--button-color-text-hovered);
+                }
+                
+                &__icon
+                {
+                    background-color: var(--button-color-bg-icon-hovered);
+                }
+            }
+        }
+
+        &:active
+        {
+            .button
+            {
+                &__text
+                {
+                    background-color: var(--button-color-bg-text-pressed);
+                    color: var(--button-color-text-pressed);
+                }
+                
+                &__icon
+                {
+                    background-color: var(--button-color-bg-icon-pressed);
+                }
+            }
+        }
+    }
+    
+
+    // Switch
+    &--switch
+    {
+        @include mixins.flex(row, flex-start);
+
+        font-size: $font-size;
+        background-color: var(--button-switch-color-bg);
+        height: calc(($line-height)*$font-size + ($padding-vertical)*2);
+        padding: $padding-vertical 0;
+
+        &:hover
+        {
+            background-color: var(--button-switch-color-bg-hovered);
+        }
+
+        .runner
+        {
+            @include mixins.flex(row, center, center);
+            position: relative;
+            height: calc(($line-height)*$font-size);
+            width: calc(($line-height)*$font-size);
+            background-color: var(--button-switch-color-runner);
+            border-radius: 4px;
+   
+            margin-right: 0.25em;
+            margin-left: calc(100% - ($line-height)*$font-size  - 0.25em);
+
+            transition: margin 250ms ease-in-out;
+
+            &--active
+            {
+                margin-right: calc(100% - ($line-height)*$font-size  - 0.25em);
+                margin-left: 0.25em;
+            }
+
+            .svg-icon
+            {
+                width: 75%;
+                height: 75%;
+            }
+        }
+    }
+
+    // Icon Button (Phase)
+    &--phase-setter
+    {
+        flex: 1 0 60px;
+        .button
+        {
+            &__text
+            {
+                flex: 1 0 0;
+            }
+            &__icon
+            {
+                flex: 1 0 0;
+            }
+        }
+    }
+
+    &--display-setter
+    {
+        .button
+        {
+            &__text
+            {
+                text-transform: uppercase;
+            }
+        }
+    }
+}

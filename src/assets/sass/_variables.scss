@@ -1,0 +1,68 @@
+// Fonts 
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400;700&display=swap');
+
+// Colors -------------------------------
+$color-black: black;
+$color-white: white;
+
+$color-black-darkest:       #000000;
+$color-black-dark:          #121212;
+$color-black-medium:        #242424;
+$color-black-light:         #343434;
+$color-black-lightest:      #424242;
+
+$color-gray-dark: #696969;
+$color-gray-medium: #777777;
+$color-gray-light: silver;
+
+$color-white-dark: lightgray;
+$color-white-medium: gainsboro;
+$color-white-light: whitesmoke;
+
+$color-red-dark: maroon;
+$color-red-medium: firebrick;
+$color-red-light: crimson;
+
+$color-green-dark: seagreen;
+$color-green-medium: mediumseagreen;
+$color-green-light: springgreen;
+
+$color-blue-dark: royalblue;
+$color-blue-medium: dodgerblue;
+$color-blue-light: deepskyblue;
+
+$color-yellow-dark: chocolate;
+$color-yellow-medium: orange;
+$color-yellow-light: gold;
+
+$color-violet-dark: hsl(297, 96%, 32%);
+$color-violet-medium: hsl(300, 98%, 40%);
+$color-violet-light: hsl(303, 100%, 48%);
+// --------------------------------------
+
+// Paddings -----------------------------
+$default-padding:   0.5rem;
+$default-gap:       0.5rem;
+$default-border-radius: 4px;
+
+$padding-button-icon: 0.5rem;
+$padding-button-text: 0.5rem;
+// --------------------------------------
+
+// Border radiuses ----------------------
+// --------------------------------------
+
+// Sizes --------------------------------
+$width-small-screen: 400px;
+$width-large-screen: 1200px;
+
+$progress-bar-size: 1.5rem;
+
+$button-font-size: 1.5rem;
+
+$switch-width: 5rem;
+$switch-padding: 0.25rem;
+
+// --------------------------------------
+
+

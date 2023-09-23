@@ -1,0 +1,32 @@
+// Utility
+@use "variables";
+
+@mixin flex($direction: row, $main-axis: center, $cross-axis: stretch, $wrap: nowrap)
+{
+    display:            flex;
+    flex-direction:     $direction;
+    justify-content:    $main-axis;
+    align-items:        $cross-axis;
+    flex-wrap:          $wrap;
+}
+
+@mixin grid($rows: 1fr, $columns: 1fr, $row-axis: center, $column-axis: stretch)
+{
+    display:                    grid;
+    grid-template-rows:         $rows;
+    grid-template-columns:      $columns;
+    justify-content:            $row-axis;
+    align-items:                $column-axis;
+}
+
+@mixin border($color: gray, $size: 2px, $type: solid )
+{
+    border: $size $type $color;
+}
+
+@mixin container($elevation: 0, $border-radius: variables.$default-border-radius)
+{
+    background-color: var(--bg-elevation-#{$elevation});
+    border-radius: $border-radius;
+
+}

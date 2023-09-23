@@ -1,0 +1,30 @@
+// Utility
+@use "mixins";
+@use "variables";
+
+
+.modal 
+{
+    @include mixins.flex(row, center, center);
+
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); 
+
+    &__content 
+    {
+        @include mixins.flex(column, flex-start);
+        @include mixins.container(3);
+
+        width: 80%;
+        max-width: variables.$width-large-screen;
+        padding: variables.$default-padding;
+        gap: variables.$default-gap;
+        text-align: center;
+    }
+}
+  
