@@ -70,7 +70,7 @@ export default function useClock(phase: PhaseType, sessionTime: number = 25, bre
 {
     const [state, dispatch] = useReducer(reducer, 
         {status: ClockStatus.PAUSED, phase: phase, time: (phase===PhaseType.BREAK) ? breakTime*60 : sessionTime*60});
-    const intervalReference = useRef<number | undefined>(0);
+    const intervalReference = useRef<number | undefined>(undefined);
 
     // Start countdown
     const startClock = () =>
