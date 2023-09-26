@@ -23,8 +23,20 @@ body, #root
     min-height: 100vh;
 }
 
+a
+{
+    color: var(--text-color);
+    text-decoration: none;
+    &:visited
+    {
+        color: var(--text-color);
+        text-decoration: none;
+    }
+}
+
 #root
 {   @include mixins.container(0, 0);
+    @include mixins.flex(column, center, center);
 
     padding: variables.$default-padding;
     color: var(--text-color);
@@ -34,7 +46,8 @@ body, #root
 {
     @include mixins.flex(column, center, stretch);
 
-    max-width: 320px;
+    width: 80%;
+    max-width: 420px;
     margin: 0 auto;
     
     &__content
