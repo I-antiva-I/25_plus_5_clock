@@ -19,6 +19,9 @@ function Modal(props: ModalProps)
                 <h2 className="header__title">information</h2>
                 <h3 className="header__subtitle">This application is based on challenge from freeCodeCamp</h3>
             </div>
+            <div>
+                <a href="https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock" target="_blank">Link</a>
+            </div>
 
         </div>
     </div>
