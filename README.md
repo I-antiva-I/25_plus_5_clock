@@ -3,7 +3,10 @@
 ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/I-antiva-I/25_plus_5_clock?style=for-the-badge)
 
 ## Description
-This is a freeCodeCamp challenge.
+This project is a solution for the freeCodeCamp "25 + 5 Clock" challenge. You can find more details about the challenge [here](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock).
+
+## Demo
+[View the solution](https://i-antiva-i.github.io/25_plus_5_clock/)
 
 ## Languages and Tools
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
